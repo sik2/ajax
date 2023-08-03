@@ -10,6 +10,14 @@ public class HomeController {
     private int count1 = 0;
     private int count2 = 0;
 
+    @GetMapping("/main1")
+   public String showMain1(Model model) {
+        model.addAttribute("count1", count1);
+        model.addAttribute("count2", count2);
+
+        return "main1";
+    }
+
     @GetMapping("/count1")
     @ResponseBody
     public RsData<Integer> getCount1(Model model) {
